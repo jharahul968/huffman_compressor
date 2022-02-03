@@ -3,8 +3,11 @@ from encoder_decoder import buildHuffmanTree,test1,test2,test3,test4
 
 root= tk.Tk()
 
+
+
 def run():
-    canvas1 = tk.Canvas(root, width = 1000, height = 1000,  relief = 'raised')
+
+    canvas1 = tk.Canvas(root, width = 1000, height = 500,  relief = 'raised',bg='sky blue')
     canvas1.pack()
 
     label1 = tk.Label(root, text='Huffman Coding to compress data.')
@@ -54,15 +57,23 @@ def run():
 
             label11 = tk.Label(root, text= x4,font=('helvetica', 10, 'bold'))
             canvas1.create_window(500, 370, window=label11)
+
+            button0 = tk.Button(text='Clear Screen', command=lambda: [label3.destroy(),label4.destroy(),label5.destroy(),label6.destroy(),label7.destroy(),label8.destroy(),label9.destroy(),label0.destroy(),label11.destroy(),button0.destroy()], bg='brown', fg='white', font=('helvetica', 9, 'bold'))
+            canvas1.create_window(500, 160, window=button0)
+
         else:
             label12 = tk.Label(root, text= 'String not entered. Error.',font=('helvetica', 10))
             canvas1.create_window(500, 230, window=label12)
-
+            button0 = tk.Button(text='Clear Screen', command=lambda: [label12.destroy(),button0.destroy()], bg='brown', fg='white', font=('helvetica', 9, 'bold'))
+            canvas1.create_window(500, 160, window=button0)
 
 
 
 
     button1 = tk.Button(text='Compress the data', command=huff, bg='brown', fg='white', font=('helvetica', 9, 'bold'))
     canvas1.create_window(500, 130, window=button1)
+    
+
+    
 
     root.mainloop()
