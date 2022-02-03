@@ -1,7 +1,9 @@
 import tkinter as tk
 from encoder_decoder import buildHuffmanTree,test1,test2,test3,test4
-
+import table_dict
+from table_dict import run1
 root= tk.Tk()
+root.title('Huffman Compression')
 
 
 
@@ -58,8 +60,10 @@ def run():
             label11 = tk.Label(root, text= x4,font=('helvetica', 10, 'bold'))
             canvas1.create_window(500, 370, window=label11)
 
-            button0 = tk.Button(text='Clear Screen', command=lambda: [label3.destroy(),label4.destroy(),label5.destroy(),label6.destroy(),label7.destroy(),label8.destroy(),label9.destroy(),label0.destroy(),label11.destroy(),button0.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
-            canvas1.create_window(500, 158, window=button0)
+            button0 = tk.Button(text='Clear Screen', command=lambda: [label3.destroy(),label4.destroy(),label5.destroy(),label6.destroy(),label7.destroy(),label8.destroy(),label9.destroy(),label0.destroy(),label11.destroy(),button0.destroy(),button00.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
+            canvas1.create_window(580, 158, window=button0)
+            button00=tk.Button(text='View dictionary as table',command=lambda: run1,bg='red',fg='white', font=('helvetica', 9, 'bold'))
+            canvas1.create_window(450,158,window=button00)
 
         else:
             label12 = tk.Label(root, text= 'String not entered. Error.',font=('helvetica', 10))
