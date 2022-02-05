@@ -1,7 +1,8 @@
 # Python program to create a table
 
 from tkinter import *
-
+# import tk
+from encoder_decoder import test1
 class Table:
     
     def __init__(self,root):
@@ -17,12 +18,14 @@ class Table:
                 self.e.insert(END, lst[i][j])
 
 # take the data
-lst = {1:'Raj',
-    2:'Aaryan',
-    3:'Vaishnavi',
-    4:'Rachna',
-    5:'Shubham'}
+# lst = {1:'Raj',
+#     2:'Aaryan',
+#     3:'Vaishnavi',
+#     4:'Rachna',
+#     5:'Shubham'}
+lst = test1()
 lst=list(lst.items())
+
 
 # find total number of rows and
 # columns in list

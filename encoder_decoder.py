@@ -1,10 +1,7 @@
 import heapq
 from heapq import heappop, heappush
- 
- 
 def isLeaf(root):
     return root.left is None and root.right is None
- 
  
 # A Tree node
 class Node:
@@ -52,9 +49,13 @@ def decode(root, index, s):
  
 # Builds Huffman Tree and decodes the given input text
 def buildHuffmanTree(text):
- 
+
     # base case: empty string
+    global flag 
+    flag = 1
     if len(text) == 0:
+        
+        flag = 0
         return
  
     # count the frequency of appearance of each character
@@ -91,7 +92,7 @@ def buildHuffmanTree(text):
     # print the Huffman codes
     print('Huffman Codes are:', huffmanCode)
     print('The original string is:', text)
- 
+    
     # print the encoded string
     s = ''
     for c in text:
@@ -111,29 +112,34 @@ def buildHuffmanTree(text):
         index = -1
         while index < len(s) - 1:
             index = decode(root, index, s)
- 
+    #return huffmanCode
+    global dct, encoded_string, decoded_string 
+    dct = huffmanCode
+    encoded_string = s
+    decoded_string = text
+
+
  
 # Huffman coding algorithm implementation in Python
-if __name__ == '__main__':
- 
-    text = 'Huffman coding is a data compression algorithm.'
-    buildHuffmanTree(text)
+# if __name__ == '__main__':
+    
+#     text = 'Huffman coding is a data compression algorithm.'
+#     dct = buildHuffmanTree(text)
 
-
-
-
-
-
-def test1(a):
-    if a:
-        return '11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'
-def test2(a):
-    if a:
-        return '222222222222222222222'
-def test3(a):
-    if a:
-        return '33333333333333333333'
-def test4(a):
-    if a:
-        return '444444444444444444444'
+def test1(): #dictionary
+    if flag != 0:
+        # print ("hami yaha xau")
+        # print ("The dictionary is hehehe")
+        # print (dct)
+        # print ("bye bye")
+        return dct
+def test2(): #encoded string 
+    if flag != 0:
+        return encoded_string
+def test3(): #decoded string
+    if flag != 0:
+        return decoded_string
+# def test4(a):
+#     if a:
+#         return '444444444444444444444'
 

@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter as tk
-from encoder_decoder import buildHuffmanTree,test1,test2,test3,test4
+from encoder_decoder import buildHuffmanTree, test1, test2, test3
 from table_dict import run1
 
 root= tk.Tk()
@@ -71,11 +71,12 @@ def run():
                     canvas1.create_window(500, 200, window=label3)
                     label3.config(bg='sky blue',fg='black')
 
-
-                    x2=test1(x1)
-                    x3=test2(x1)
-                    x4=test3(x1)
-                    x5=test4(x1)
+                    buildHuffmanTree(x1)
+                    x2 = test1() #x2 is a dictionary
+                    x3 = test2() 
+                    x4 = test3()
+                    #x5 = test1() #x5 k ko lagi banako bro?
+            
 
 
                     label4 = tk.Label(root, text= 'Original String: ',font=('helvetica', 10))
