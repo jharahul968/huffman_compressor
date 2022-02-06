@@ -18,12 +18,12 @@ class Table:
                 self.e.insert(END, lst[i][j])
 
 # take the data
-# lst = {1:'Raj',
-#     2:'Aaryan',
-#     3:'Vaishnavi',
-#     4:'Rachna',
-#     5:'Shubham'}
-lst = test1()
+lst = {1:'Raj',
+    2:'Aaryan',
+    3:'Vaishnavi',
+    4:'Rachna',
+    5:'Shubham'}
+# lst = test1()
 lst=list(lst.items())
 
 
