@@ -10,4 +10,4 @@ def toBinary(a):
   return m
 
 print("''Hello world'' in binary is ") 
-print(toBinary("Hello"))
+print(toBinary("Huffman coding is a data compression algorithm."))
