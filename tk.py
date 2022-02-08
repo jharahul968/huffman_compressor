@@ -1,6 +1,6 @@
 from tkinter import *
 import tkinter as tk
-from encoder_decoder import buildHuffmanTree, return_decoded, return_dict, return_encoded
+from encoder_decoder import buildHuffmanTree, return_decoded, return_dict, return_encoded, return_freq
 from table_dict import run1
 
 
@@ -34,12 +34,14 @@ def run():
         # canvas1.create_window(800,70,window=btn1)
         if x1:
 
+
+
             label00 = tk.Label(text='Data is compressed.', bg='brown',
                                fg='white', font=('helvetica', 12, 'bold'))
             canvas1.create_window(500, 130, window=label00)
 
             options = ["Original String", "Encoded String",
-                       "Decoded String", "Dictionary", "View all"]
+                       "Decoded String", "Dictionary", "Frequency Table", "View all"]
             variable = StringVar(root)
             variable.set("Select an option")
 
@@ -130,6 +132,20 @@ def run():
 
 
 
+                if opt == "Frequency Table":
+
+                    button0 = tk.Button(text='Clear Screen', command=lambda: [label00.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
+                    canvas1.create_window(650, 130, window=button0)
+                    run1(return_freq(x1))
+
+
+
+
+
+
+
+
+
 
 
 
@@ -185,11 +201,17 @@ def run():
                     x2 = return_dict(x1)
                     x3 = return_encoded(x1)
                     x4 = return_decoded(x1)
+                    x5=return_freq(x1)
 
                     label4 = tk.Label(
                         root, text='Original String: ', font=('helvetica', 10))
                     canvas1.create_window(500, 230, window=label4)
                     label4.config(bg='sky blue', fg='black')
+
+                    button000 = tk.Button(text='View dictionary as table', command=lambda: run1(x5),
+                                         bg='red', fg='white', font=('helvetica', 9, 'bold'))
+                    canvas1.create_window(650, 230, window=button000)
+
 
                     label5 = tk.Label(root, text=x1, font=(
                         'helvetica', 10, 'bold'))
@@ -230,7 +252,7 @@ def run():
                                          bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 270, window=button00)
 
-                    button0 = tk.Button(text='Clear Screen', command=lambda: [label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), label6.destroy(), label7.destroy(), label8.destroy(
+                    button0 = tk.Button(text='Clear Screen', command=lambda: [button000.destroy(), label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), label6.destroy(), label7.destroy(), label8.destroy(
                     ), label9.destroy(), label0.destroy(), label11.destroy(), button0.destroy(), button00.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 130, window=button0)
 

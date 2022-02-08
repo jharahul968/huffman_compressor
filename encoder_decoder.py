@@ -112,10 +112,11 @@ def buildHuffmanTree(text):
         while index < len(s) - 1:
             index = decode(root, index, s)
     #return huffmanCode
-    global dct, encoded_string, decoded_string 
+    global dct, encoded_string, decoded_string, t_freq 
     dct = huffmanCode
     encoded_string = s
     decoded_string = text
+    t_freq=freq
 
 
  
@@ -138,3 +139,9 @@ def return_decoded(txt): #decoded string
     buildHuffmanTree(txt)
     if flag != 0:
         return decoded_string
+    
+def return_freq(txt): #decoded string
+    buildHuffmanTree(txt)
+    if flag != 0:
+        return t_freq
+
