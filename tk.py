@@ -68,6 +68,113 @@ def run():
                     button0 = tk.Button(text='Clear Screen', command=lambda: [label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 130, window=button0)
 
+
+
+
+
+                if opt == "Encoded String":
+                    label3 = tk.Label(root, text='Results', font=(
+                        'helvetica', 15, 'underline'))
+                    canvas1.create_window(500, 200, window=label3)
+                    label3.config(bg='sky blue', fg='black')
+
+                    label4 = tk.Label(
+                        root, text='Encoded String: ', font=('helvetica', 10))
+                    canvas1.create_window(500, 230, window=label4)
+                    label4.config(bg='sky blue', fg='black')
+
+                    x2=return_encoded(x1)
+
+                    label5 = tk.Label(root, text=x2, font=(
+                        'helvetica', 10, 'bold'))
+                    canvas1.create_window(500, 250, window=label5)
+                    label5.config(bg='sky blue', fg='black')
+
+                    button0 = tk.Button(text='Clear Screen', command=lambda: [label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
+                    canvas1.create_window(650, 130, window=button0)
+
+
+
+
+
+
+
+
+
+
+
+
+                if opt == "Decoded String":
+                    label3 = tk.Label(root, text='Results', font=(
+                        'helvetica', 15, 'underline'))
+                    canvas1.create_window(500, 200, window=label3)
+                    label3.config(bg='sky blue', fg='black')
+
+                    label4 = tk.Label(
+                        root, text='Decoded String: ', font=('helvetica', 10))
+                    canvas1.create_window(500, 230, window=label4)
+                    label4.config(bg='sky blue', fg='black')
+
+                    x2=return_decoded(x1)
+
+                    label5 = tk.Label(root, text=x2, font=(
+                        'helvetica', 10, 'bold'))
+                    canvas1.create_window(500, 250, window=label5)
+                    label5.config(bg='sky blue', fg='black')
+
+                    button0 = tk.Button(text='Clear Screen', command=lambda: [label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
+                    canvas1.create_window(650, 130, window=button0)
+
+
+
+
+
+
+
+
+
+                if opt == "Dictionary":
+                    label3 = tk.Label(root, text='Results', font=(
+                        'helvetica', 15, 'underline'))
+                    canvas1.create_window(500, 200, window=label3)
+                    label3.config(bg='sky blue', fg='black')
+
+                    label4 = tk.Label(
+                        root, text='Dictionary: ', font=('helvetica', 10))
+                    canvas1.create_window(500, 230, window=label4)
+                    label4.config(bg='sky blue', fg='black')
+
+                    x2=return_dict(x1)
+
+
+                    label5 = tk.Label(root, text=x1, font=(
+                        'helvetica', 10, 'bold'))
+                    canvas1.create_window(500, 250, window=label5)
+                    label5.config(bg='sky blue', fg='black')
+
+                    button00 = tk.Button(text='View dictionary as table', command=lambda: run1(x2),
+                                         bg='red', fg='white', font=('helvetica', 9, 'bold'))
+                    canvas1.create_window(650, 230, window=button00)
+
+                    button0 = tk.Button(text='Clear Screen', command=lambda: [button00.destroy(), label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
+                    canvas1.create_window(650, 130, window=button0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 elif opt == "View all":
                     label3 = tk.Label(root, text='Results', font=(
                         'helvetica', 15, 'underline'))
