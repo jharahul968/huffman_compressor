@@ -1,5 +1,6 @@
 import heapq
 from heapq import heappop, heappush
+
 def isLeaf(root):
     return root.left is None and root.right is None
  
@@ -11,8 +12,7 @@ class Node:
         self.left = left
         self.right = right
  
-    # Override the `__lt__()` function to make `Node` class work with priority queue
-    # such that the highest priority item has the lowest frequency
+    # Override the `__lt__()` function to make `Node` class work with priority queue such that the highest priority item has the lowest frequency
     def __lt__(self, other):
         return self.freq < other.freq
  
@@ -58,8 +58,7 @@ def buildHuffmanTree(text):
         flag = 0
         return
  
-    # count the frequency of appearance of each character
-    # and store it in a dictionary
+    # count the frequency of appearance of each character and store it in a dictionary
     freq = {i: text.count(i) for i in set(text)}
  
     # Create a priority queue to store live nodes of the Huffman tree.
@@ -122,24 +121,20 @@ def buildHuffmanTree(text):
  
 # Huffman coding algorithm implementation in Python
 # if __name__ == '__main__':
-    
 #     text = 'Huffman coding is a data compression algorithm.'
 #     dct = buildHuffmanTree(text)
 
-def test1(): #dictionary
+def return_dict(txt): #dictionary
+    buildHuffmanTree(txt)
     if flag != 0:
-        # print ("hami yaha xau")
-        # print ("The dictionary is hehehe")
-        # print (dct)
-        # print ("bye bye")
         return dct
-def test2(): #encoded string 
+
+def return_encoded(txt): #encoded string 
+    buildHuffmanTree(txt)
     if flag != 0:
         return encoded_string
-def test3(): #decoded string
+
+def return_decoded(txt): #decoded string
+    buildHuffmanTree(txt)
     if flag != 0:
         return decoded_string
-# def test4(a):
-#     if a:
-#         return '444444444444444444444'
-
