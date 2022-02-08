@@ -1,7 +1,7 @@
 
-
-import math
 def toBinary(a):
+      
+  import math
   l,m=[],[]
   for i in a:
     l.append(ord(i))
@@ -10,4 +10,7 @@ def toBinary(a):
   return ''.join(map(str, m))
 
 
-print(toBinary("Huffman coding is a data compression algorithm."))
+
+
+if __name__ == '__main__':
+  print(toBinary("Huffman coding is a data compression algorithm."))
