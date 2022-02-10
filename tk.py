@@ -1,7 +1,7 @@
 from tkinter import *
 import tkinter as tk
 from encoder_decoder import buildHuffmanTree, return_decoded, return_dict, return_encoded, return_freq
-from table_dict import run1
+from table_dict import run1,run2
 
 
 
@@ -136,7 +136,7 @@ def run():
 
                     button0 = tk.Button(text='Clear Screen', command=lambda: [label00.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 130, window=button0)
-                    run1(return_freq(x1))
+                    run2(return_freq(x1))
 
 
 
@@ -208,12 +208,12 @@ def run():
                     canvas1.create_window(500, 230, window=label4)
                     label4.config(bg='sky blue', fg='black')
 
-                    button000 = tk.Button(text='View dictionary as table', command=lambda: run1(x5),
+                    button000 = tk.Button(text='View Frequency table', command=lambda: run2(x5),
                                          bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 230, window=button000)
 
 
-                    label5 = tk.Label(root, text=x1, font=(
+                    label5 = tk.Label(root, text=x2, font=(
                         'helvetica', 10, 'bold'))
                     canvas1.create_window(500, 250, window=label5)
                     label5.config(bg='sky blue', fg='black')
