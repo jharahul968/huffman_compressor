@@ -2,6 +2,10 @@ from tkinter import *
 import tkinter as tk
 from encoder_decoder import buildHuffmanTree, return_decoded, return_dict, return_encoded, return_freq
 from table_dict import run1,run2
+import webbrowser
+
+url="https://en.wikipedia.org/wiki/Huffman_coding"
+
 
 
 
@@ -13,11 +17,25 @@ def run():
     canvas1 = tk.Canvas(root, width=1000, height=500,
                         relief='raised', bg='sky blue')
     canvas1.pack()
+    
 
     label1 = tk.Label(root, text='Huffman Coding to compress data.')
     label1.config(font=('helvetica', 20))
     canvas1.create_window(500, 25, window=label1)
     label1.config(bg='pink', fg='black')
+
+
+
+
+
+
+    b = tk.Button(text='i', command=lambda: webbrowser.open(url,new=0,autoraise=True), bg='blue', font=('times', 13, "bold italic"), fg='white')
+    canvas1.create_window(990, 20, window=b)
+
+
+
+
+
 
     label2 = tk.Label(root, text='Type the string to be compressed:')
     label2.config(font=('helvetica', 14))
@@ -27,11 +45,18 @@ def run():
     entry1 = tk.Entry(root, width=30, font=('helvetica', 12))
     canvas1.create_window(650, 70, window=entry1)
 
+
+
+    def clear_entry(e):
+        e.delete(0, END)
+        e.insert(0, "")
+
+
     def huff():
 
         x1 = entry1.get()
-        # btn1=tk.Button(root,command=entry1.delete(1),bg='red', fg='white', font=('helvetica', 9, 'bold'),text="x")
-        # canvas1.create_window(800,70,window=btn1)
+        btn1=tk.Button(root,command=lambda: clear_entry(entry1),bg='red', fg='white', font=('helvetica', 9, 'bold'),text="x")
+        canvas1.create_window(800,70,window=btn1)
         if x1:
 
 
