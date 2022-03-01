@@ -60,7 +60,7 @@ def run():
         if x1:
 
 
-
+            buildHuffmanTree(x1)
             label00 = tk.Label(text='Data is compressed.', bg='brown',
                                fg='white', font=('helvetica', 12, 'bold'))
             canvas1.create_window(500, 130, window=label00)

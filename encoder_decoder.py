@@ -1,7 +1,6 @@
-import heapq
-from heapq import heappop, heappush
-global decoded_string
-decoded_string=''
+from createheap import heappop, heappush, returnRootNode
+global decoded_string, dct, encoded_string, t_freq, flag
+decoded_string = ''
 def isLeaf(root):
     return root.left is None and root.right is None
  
@@ -16,8 +15,8 @@ class Node:
     # Override the `__lt__()` function to make `Node` class work with priority queue such that the highest priority item has the lowest frequency
     def __lt__(self, other):
         return self.freq < other.freq
- 
- 
+
+
 # Traverse the Huffman Tree and store Huffman Codes in a dictionary
 def encode(root, s, huffman_code):
  
@@ -66,8 +65,7 @@ def buildHuffmanTree(text):
  
     # Create a priority queue to store live nodes of the Huffman tree.
     pq = [Node(k, v) for k, v in freq.items()]
-    heapq.heapify(pq)
- 
+
     # do till there is more than one node in the queue
     while len(pq) != 1:
  
@@ -85,7 +83,7 @@ def buildHuffmanTree(text):
         heappush(pq, Node(None, total, left, right))
  
     # `root` stores pointer to the root of Huffman Tree
-    root = pq[0]
+    root = returnRootNode(pq)
  
     # traverse the Huffman tree and store the Huffman codes in a dictionary
     huffmanCode = {}
@@ -120,36 +118,29 @@ def buildHuffmanTree(text):
     encoded_string = s
     t_freq=freq
 
-
- 
-# Huffman coding algorithm implementation in Python
-# if __name__ == '__main__':
-#     text = 'Huffman coding is a data compression algorithm.'
-#     dct = buildHuffmanTree(text)
-
 def return_dict(txt): #dictionary
-    global decoded_string
-    buildHuffmanTree(txt)
+    # global decoded_string
+    # buildHuffmanTree(txt)
     if flag != 0:
-        decoded_string=''
+        # decoded_string=''
         return dct
 
 def return_encoded(txt): #encoded string 
-    global decoded_string
-    buildHuffmanTree(txt)
+    # global decoded_string
+    # buildHuffmanTree(txt)
     if flag != 0:
-        decoded_string=''
+        # decoded_string=''
         return encoded_string
 
 def return_decoded(txt): #decoded string
-    buildHuffmanTree(txt)
+    # buildHuffmanTree(txt)
     if flag != 0:
         return decoded_string
     
 def return_freq(txt): #decoded string
-    global decoded_string
-    buildHuffmanTree(txt)
+    # global decoded_string
+    # buildHuffmanTree(txt)
     if flag != 0:
-        decoded_string=''
+        # decoded_string=''
         return t_freq
 
