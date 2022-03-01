@@ -238,7 +238,7 @@ def run():
                     canvas1.create_window(650, 230, window=button000)
 
 
-                    label5 = tk.Label(root, text=x2, font=(
+                    label5 = tk.Label(root, text=x1, font=(
                         'helvetica', 10, 'bold'))
                     canvas1.create_window(500, 250, window=label5)
                     label5.config(bg='sky blue', fg='black')

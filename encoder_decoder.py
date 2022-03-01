@@ -1,6 +1,7 @@
 import heapq
 from heapq import heappop, heappush
-
+global decoded_string
+decoded_string=''
 def isLeaf(root):
     return root.left is None and root.right is None
  
@@ -33,6 +34,7 @@ def encode(root, s, huffman_code):
  
 # Traverse the Huffman Tree and decode the encoded string
 def decode(root, index, s):
+    global decoded_string
  
     if root is None:
         return index
@@ -40,6 +42,7 @@ def decode(root, index, s):
     # found a leaf node
     if isLeaf(root):
         print(root.ch, end='')
+        decoded_string+=root.ch
         return index
  
     index = index + 1
@@ -112,10 +115,9 @@ def buildHuffmanTree(text):
         while index < len(s) - 1:
             index = decode(root, index, s)
     #return huffmanCode
-    global dct, encoded_string, decoded_string, t_freq 
+    global dct, encoded_string, t_freq 
     dct = huffmanCode
     encoded_string = s
-    decoded_string = text
     t_freq=freq
 
 
@@ -126,13 +128,17 @@ def buildHuffmanTree(text):
 #     dct = buildHuffmanTree(text)
 
 def return_dict(txt): #dictionary
+    global decoded_string
     buildHuffmanTree(txt)
     if flag != 0:
+        decoded_string=''
         return dct
 
 def return_encoded(txt): #encoded string 
+    global decoded_string
     buildHuffmanTree(txt)
     if flag != 0:
+        decoded_string=''
         return encoded_string
 
 def return_decoded(txt): #decoded string
@@ -141,7 +147,9 @@ def return_decoded(txt): #decoded string
         return decoded_string
     
 def return_freq(txt): #decoded string
+    global decoded_string
     buildHuffmanTree(txt)
     if flag != 0:
+        decoded_string=''
         return t_freq
 
