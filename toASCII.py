@@ -1,13 +1,19 @@
-import math
-
 
 def toBinary(a):
+      
+  import math
   l,m=[],[]
   for i in a:
     l.append(ord(i))
   for i in l:
     m.append(int(bin(i)[2:]))
-  return m
+  return ''.join(map(str, m))
 
-print("''Hello world'' in binary is ") 
-print(toBinary("Huffman coding is a data compression algorithm."))
+
+
+
+if __name__ == '__main__':
+  st='Huffman coding is a data compression algorithm.'
+  print(toBinary(st))
+  print("Length= ", end='')
+  print(len(toBinary(st)))

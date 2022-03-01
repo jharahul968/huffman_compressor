@@ -1,5 +1,7 @@
-import heapq
-from heapq import heappop, heappush
+
+from createheap import heappop, heappush, returnRootNode
+global decoded_string
+decoded_string=''
 def isLeaf(root):
     return root.left is None and root.right is None
  
@@ -11,12 +13,11 @@ class Node:
         self.left = left
         self.right = right
  
-    # Override the `__lt__()` function to make `Node` class work with priority queue
-    # such that the highest priority item has the lowest frequency
+    # Override the `__lt__()` function to make `Node` class work with priority queue such that the highest priority item has the lowest frequency
     def __lt__(self, other):
         return self.freq < other.freq
- 
- 
+
+
 # Traverse the Huffman Tree and store Huffman Codes in a dictionary
 def encode(root, s, huffman_code):
  
@@ -33,6 +34,7 @@ def encode(root, s, huffman_code):
  
 # Traverse the Huffman Tree and decode the encoded string
 def decode(root, index, s):
+    global decoded_string
  
     if root is None:
         return index
@@ -40,6 +42,7 @@ def decode(root, index, s):
     # found a leaf node
     if isLeaf(root):
         print(root.ch, end='')
+        decoded_string+=root.ch
         return index
  
     index = index + 1
@@ -58,14 +61,12 @@ def buildHuffmanTree(text):
         flag = 0
         return
  
-    # count the frequency of appearance of each character
-    # and store it in a dictionary
+    # count the frequency of appearance of each character and store it in a dictionary
     freq = {i: text.count(i) for i in set(text)}
  
     # Create a priority queue to store live nodes of the Huffman tree.
     pq = [Node(k, v) for k, v in freq.items()]
-    heapq.heapify(pq)
- 
+
     # do till there is more than one node in the queue
     while len(pq) != 1:
  
@@ -83,7 +84,7 @@ def buildHuffmanTree(text):
         heappush(pq, Node(None, total, left, right))
  
     # `root` stores pointer to the root of Huffman Tree
-    root = pq[0]
+    root = returnRootNode(pq)
  
     # traverse the Huffman tree and store the Huffman codes in a dictionary
     huffmanCode = {}
@@ -113,33 +114,41 @@ def buildHuffmanTree(text):
         while index < len(s) - 1:
             index = decode(root, index, s)
     #return huffmanCode
-    global dct, encoded_string, decoded_string 
+    global dct, encoded_string, t_freq 
     dct = huffmanCode
     encoded_string = s
-    decoded_string = text
+    t_freq=freq
 
 
  
 # Huffman coding algorithm implementation in Python
 # if __name__ == '__main__':
-    
 #     text = 'Huffman coding is a data compression algorithm.'
 #     dct = buildHuffmanTree(text)
 
-def test1(): #dictionary
+def return_dict(txt): #dictionary
+    global decoded_string
+    buildHuffmanTree(txt)
     if flag != 0:
-        # print ("hami yaha xau")
-        # print ("The dictionary is hehehe")
-        # print (dct)
-        # print ("bye bye")
+        decoded_string=''
         return dct
-def test2(): #encoded string 
+
+def return_encoded(txt): #encoded string 
+    global decoded_string
+    buildHuffmanTree(txt)
     if flag != 0:
+        decoded_string=''
         return encoded_string
-def test3(): #decoded string
+
+def return_decoded(txt): #decoded string
+    buildHuffmanTree(txt)
     if flag != 0:
         return decoded_string
-# def test4(a):
-#     if a:
-#         return '444444444444444444444'
+    
+def return_freq(txt): #decoded string
+    global decoded_string
+    buildHuffmanTree(txt)
+    if flag != 0:
+        decoded_string=''
+        return t_freq
 
