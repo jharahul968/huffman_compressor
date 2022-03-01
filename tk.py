@@ -105,6 +105,8 @@ def run():
                     canvas1.create_window(500, 200, window=label3)
                     label3.config(bg='sky blue', fg='black')
 
+
+
                     label4 = tk.Label(
                         root, text='Encoded String: ', font=('helvetica', 10))
                     canvas1.create_window(500, 230, window=label4)
@@ -112,12 +114,18 @@ def run():
 
                     x2=return_encoded(x1)
 
+                    ss="(Length= "+str(len(x2))+")"
+                    label88 = tk.Label(
+                        root, text=ss, font=('helvetica', 10, 'italic'))
+                    canvas1.create_window(600, 230, window=label88)
+                    label88.config(bg='sky blue', fg='black')
+
                     label5 = tk.Label(root, text=x2, font=(
                         'helvetica', 10, 'bold'))
                     canvas1.create_window(500, 250, window=label5)
                     label5.config(bg='sky blue', fg='black')
 
-                    button0 = tk.Button(text='Clear Screen', command=lambda: [label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
+                    button0 = tk.Button(text='Clear Screen', command=lambda: [label88.destroy(),label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), button0.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 130, window=button0)
 
 
@@ -258,6 +266,13 @@ def run():
                     canvas1.create_window(500, 310, window=label8)
                     label8.config(bg='sky blue', fg='black')
 
+                    ss="(Length= "+str(len(x3))+")"
+                    label88 = tk.Label(
+                        root, text=ss, font=('helvetica', 10, 'italic'))
+                    canvas1.create_window(600, 310, window=label88)
+                    label88.config(bg='sky blue', fg='black')
+
+
                     label9 = tk.Label(root, text=x3, font=(
                         'helvetica', 10, 'bold'))
                     canvas1.create_window(500, 330, window=label9)
@@ -277,7 +292,7 @@ def run():
                                          bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 270, window=button00)
 
-                    button0 = tk.Button(text='Clear Screen', command=lambda: [button000.destroy(), label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), label6.destroy(), label7.destroy(), label8.destroy(
+                    button0 = tk.Button(text='Clear Screen', command=lambda: [label88.destroy(),button000.destroy(), label00.destroy(), label3.destroy(), label4.destroy(), label5.destroy(), label6.destroy(), label7.destroy(), label8.destroy(
                     ), label9.destroy(), label0.destroy(), label11.destroy(), button0.destroy(), button00.destroy(), w.destroy(), button.destroy()], bg='red', fg='white', font=('helvetica', 9, 'bold'))
                     canvas1.create_window(650, 130, window=button0)
 

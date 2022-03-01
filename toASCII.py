@@ -13,7 +13,7 @@ def toBinary(a):
 
 
 if __name__ == '__main__':
-  st='Huffman coding is a data compression algorithm.'
+  st='hdfklvnd'
   print(toBinary(st))
   print("Length= ", end='')
   print(len(toBinary(st)))
