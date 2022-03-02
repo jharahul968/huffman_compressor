@@ -1,6 +1,5 @@
 from createheap import heappop, heappush, returnRootNode
-global decoded_string, dct, encoded_string, t_freq, flag
-decoded_string = ''
+global dct, encoded_string, t_freq, flag, decoded_string
 def isLeaf(root):
     return root.left is None and root.right is None
  
@@ -41,7 +40,7 @@ def decode(root, index, s):
     # found a leaf node
     if isLeaf(root):
         print(root.ch, end='')
-        decoded_string+=root.ch
+        # decoded_string+=root.ch
         return index
  
     index = index + 1
@@ -113,7 +112,8 @@ def buildHuffmanTree(text):
         while index < len(s) - 1:
             index = decode(root, index, s)
     #return huffmanCode
-    global dct, encoded_string, t_freq 
+    global dct, encoded_string, t_freq, decoded_string
+    decoded_string = text
     dct = huffmanCode
     encoded_string = s
     t_freq=freq
@@ -135,10 +135,7 @@ def return_encoded(txt): #encoded string
 def return_decoded(txt): #decoded string
     # buildHuffmanTree(txt)
     if flag != 0:
-        global decoded_string
-        ret_txt = decoded_string
-        decoded_string = ''
-        return ret_txt
+        return decoded_string
     
 def return_freq(txt): #decoded string
     # global decoded_string
