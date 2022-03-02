@@ -196,7 +196,7 @@ def run():
                     x2=return_dict(x1)
 
 
-                    label5 = tk.Label(root, text=x1, font=(
+                    label5 = tk.Label(root, text=x2, font=(
                         'helvetica', 10, 'bold'))
                     canvas1.create_window(500, 250, window=label5)
                     label5.config(bg='sky blue', fg='black')
@@ -230,7 +230,7 @@ def run():
                     canvas1.create_window(500, 200, window=label3)
                     label3.config(bg='sky blue', fg='black')
 
-                    buildHuffmanTree(x1)
+                    #buildHuffmanTree(x1)
                     x2 = return_dict(x1)
                     x3 = return_encoded(x1)
                     x4 = return_decoded(x1)

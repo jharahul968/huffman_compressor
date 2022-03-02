@@ -135,7 +135,10 @@ def return_encoded(txt): #encoded string
 def return_decoded(txt): #decoded string
     # buildHuffmanTree(txt)
     if flag != 0:
-        return decoded_string
+        global decoded_string
+        ret_txt = decoded_string
+        decoded_string = ''
+        return ret_txt
     
 def return_freq(txt): #decoded string
     # global decoded_string
