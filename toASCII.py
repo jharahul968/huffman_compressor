@@ -13,7 +13,7 @@ def toBinary(a):
 
 
 if __name__ == '__main__':
-  st='hdfklvnd'
+  st='santosh giri'
   print(toBinary(st))
   print("Length= ", end='')
   print(len(toBinary(st)))
